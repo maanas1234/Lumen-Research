@@ -14,50 +14,53 @@ A local-first AI tool to deeply understand research papers — with RAG-powered 
 
 ---
 
-## Quick Start
+## Quick Start (Setup)
 
 ### 1. Pull required Ollama models
+Make sure Ollama is installed and running locally, then pull the models:
 
 ```bash
-ollama pull llama3.2
+ollama pull qwen3:1.7b
 ollama pull nomic-embed-text
 ```
 
-> You can use any model. Change `OLLAMA_MODEL` in `backend/.env` to match.
+### 2. Setup the Backend
+Open your terminal in the repository root:
 
----
+```bash
+# 1. Create a Python virtual environment
+python -m venv venv
 
-### 2. Start the Backend
+# 2. Activate the virtual environment
+# On Windows (PowerShell):
+.\venv\Scripts\Activate.ps1
+# On Mac/Linux:
+source venv/bin/activate
 
-Open a terminal in the project root:
+# 3. Install dependencies
+pip install -r requirements.txt
 
-```powershell
-# From Paper_Reader/ directory
-.\venv\Scripts\python.exe -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
-# Run from within the backend/ directory:
-# cd backend; ..\venv\Scripts\python.exe -m uvicorn main:app --reload
+# 4. Create your local .env configuration
+cp backend/.env.example backend/.env
+
+# 5. Start the server!
+python -m uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
 ```
+*Backend runs at: **http://localhost:8000***
 
-Or use the included script:
-```powershell
-cd backend
-.\start.ps1
-```
+### 3. Setup the Frontend
+Open a **new terminal** window in the project root:
 
-Backend runs at: **http://localhost:8000**
-
----
-
-### 3. Start the Frontend
-
-Open a second terminal:
-
-```powershell
+```bash
 cd frontend
+
+# 1. Install dependencies
+npm install
+
+# 2. Start the development server
 npm run dev
 ```
-
-Frontend runs at: **http://localhost:5173**
+*Frontend runs at: **http://localhost:5173***
 
 ---
 
@@ -118,7 +121,7 @@ TOP_K_CHUNKS=5
 
 | Shortcut | Action |
 |----------|--------|
-| `Ctrl+K` | Focus chat input |
+| `Alt+/` | Focus chat input |
 | `Enter` | Send message |
 | `Shift+Enter` | New line in chat |
 

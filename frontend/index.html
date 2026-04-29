@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Research Co-Pilot</title>
+    <meta name="description" content="Local-first AI assistant for deep understanding of research papers with math support, RAG, and threaded deep dives." />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+
+    <style>
+      * { box-sizing: border-box; }
+      html, body, #root { 
+        height: 100%; 
+        margin: 0;
+        background: #000000;
+        color: #f5f5f5;
+        font-family: 'Inter', system-ui, sans-serif;
+        overflow: hidden;
+      }
+      ::-webkit-scrollbar { width: 5px; height: 5px; }
+      ::-webkit-scrollbar-track { background: #0a0a0a; }
+      ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 99px; }
+      ::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+      ::selection { background: rgba(124, 58, 237, 0.35); }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

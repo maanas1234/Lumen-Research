@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  
+  body {
+    @apply bg-black text-gray-100 font-sans antialiased;
+  }
+
+  /* KaTeX display fix for dark mode */
+  .katex { color: #e2e8f0; }
+  .katex-display { overflow-x: auto; padding: 0.5rem 0; }
+
+  /* Code blocks inside markdown */
+  pre {
+    @apply bg-surface-2 rounded-lg p-4 overflow-x-auto text-sm font-mono;
+    border: 1px solid #222;
+  }
+  
+  code {
+    @apply font-mono text-accent-light;
+  }
+
+  pre code {
+    @apply text-gray-200;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-surface-1 border border-white/5 rounded-xl;
+    backdrop-filter: blur(12px);
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 rounded-lg bg-accent text-white font-medium text-sm
+           transition-all duration-200 hover:bg-violet-500 active:scale-95
+           shadow-accent-sm hover:shadow-accent;
+  }
+
+  .btn-ghost {
+    @apply px-3 py-1.5 rounded-lg text-gray-400 text-sm font-medium
+           transition-all duration-150 hover:bg-white/5 hover:text-gray-200
+           active:scale-95;
+  }
+
+  .btn-icon {
+    @apply p-2 rounded-lg text-gray-500 transition-all duration-150
+           hover:bg-white/5 hover:text-gray-200 active:scale-95;
+  }
+
+  .input-base {
+    @apply w-full bg-surface-2 border border-white/5 rounded-lg px-4 py-2.5
+           text-gray-100 text-sm placeholder-gray-600 outline-none
+           focus:border-accent/50 focus:ring-1 focus:ring-accent/30
+           transition-all duration-200;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs
+           bg-white/5 text-gray-400 border border-white/5;
+  }
+
+  .scrollable {
+    @apply overflow-y-auto;
+    scrollbar-width: thin;
+    scrollbar-color: #2a2a2a #0a0a0a;
+  }
+
+  /* Animated shimmer skeleton */
+  .skeleton {
+    @apply rounded bg-surface-3 animate-pulse;
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, #111 25%, #1a1a1a 50%, #111 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Chat message styling */
+  .chat-user {
+    @apply bg-surface-3 rounded-2xl rounded-tr-sm px-4 py-3;
+  }
+
+  .chat-assistant {
+    @apply bg-transparent;
+  }
+
+  /* Source chip */
+  .source-chip {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs
+           bg-accent/10 text-accent-light border border-accent/20
+           cursor-pointer hover:bg-accent/20 transition-all duration-150;
+  }
+
+  /* Thread tab */
+  .thread-tab {
+    @apply flex items-center gap-2 px-3 py-2 rounded-lg text-sm
+           text-gray-400 transition-all duration-150 cursor-pointer
+           hover:bg-white/5 hover:text-gray-200;
+  }
+
+  .thread-tab-active {
+    @apply bg-accent/10 text-accent-light border border-accent/20;
+  }
+
+  /* Glow border on focus */
+  .glow-focus {
+    @apply focus-within:border-accent/50 focus-within:shadow-accent-sm;
+  }
+
+  /* PDF selection popup */
+  .selection-popup {
+    @apply absolute z-50 bg-surface-2 border border-white/10 rounded-xl shadow-glass p-1.5
+           flex flex-col gap-0.5 animate-fade-in;
+    min-width: 200px;
+  }
+
+  .selection-popup-btn {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-300
+           hover:bg-accent/10 hover:text-accent-light transition-all duration-100 cursor-pointer;
+  }
+}
+
+/* Markdown prose overrides */
+.prose-dark {
+  @apply text-gray-200;
+  line-height: 1.7;
+}
+
+.prose-dark h1, .prose-dark h2, .prose-dark h3 {
+  @apply text-white font-semibold mt-5 mb-3;
+}
+
+.prose-dark p { @apply mb-3; }
+
+.prose-dark ul { @apply list-disc pl-5 mb-3 space-y-1; }
+.prose-dark ol { @apply list-decimal pl-5 mb-3 space-y-1; }
+.prose-dark li { @apply text-gray-300; }
+
+.prose-dark blockquote {
+  @apply border-l-2 border-accent/50 pl-4 text-gray-400 italic my-3;
+}
+
+.prose-dark strong { @apply text-white font-semibold; }
+.prose-dark em { @apply text-accent-light; }
+
+.prose-dark table {
+  @apply w-full text-sm border-collapse my-3;
+}
+
+.prose-dark th {
+  @apply text-left text-gray-400 text-xs uppercase tracking-wider px-3 py-2
+         bg-surface-3 border-b border-white/5;
+}
+
+.prose-dark td {
+  @apply px-3 py-2 border-b border-white/5 text-gray-300;
+}
+
+/* Typing cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-cursor::after {
+  content: "▋";
+  @apply text-accent animate-pulse ml-0.5;
+  animation: blink 1s infinite;
+}

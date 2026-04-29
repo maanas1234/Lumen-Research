@@ -1,6 +1,9 @@
-# AI Research Co-Pilot 🚀
+# Lumen Research 🚀
 
 A local-first AI tool to deeply understand research papers — with RAG-powered chat, math explanations, deep dive threads, and zero cloud dependency.
+
+![Lumen Research Main Interface](main.png)
+![Lumen Research Auxiliary View](image.png)
 
 ---
 

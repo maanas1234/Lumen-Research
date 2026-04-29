@@ -99,7 +99,7 @@ function LandingPlaceholder() {
       </div>
 
       <div className="text-center space-y-3">
-        <h1 className="text-3xl font-bold text-white tracking-tight">AI Research Co-Pilot</h1>
+        <h1 className="text-3xl font-bold text-white tracking-tight">Lumen Research</h1>
         <p className="text-gray-500 text-base max-w-md leading-relaxed">
           Upload a research paper from the sidebar to start chatting, exploring math, and diving deep into concepts — all locally.
         </p>

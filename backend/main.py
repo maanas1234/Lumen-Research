@@ -41,7 +41,7 @@ for d in [UPLOAD_DIR, VECTOR_STORE_DIR, NOTES_DIR, THREADS_DIR]:
     d.mkdir(parents=True, exist_ok=True)
 
 # ── App + Dependencies ────────────────────────────────────────────────────────
-app = FastAPI(title="AI Research Co-Pilot", version="1.0.0")
+app = FastAPI(title="Lumen Research", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,

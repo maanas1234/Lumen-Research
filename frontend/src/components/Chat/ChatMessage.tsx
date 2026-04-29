@@ -38,7 +38,7 @@ export default function ChatMessage({ message }: Props) {
     <div className={`flex flex-col gap-1 animate-slide-up ${isUser ? 'items-end' : 'items-start'}`}>
       {/* Role label */}
       <div className={`text-[10px] font-medium px-1 ${isUser ? 'text-gray-600' : 'text-accent-light'}`}>
-        {isUser ? 'You' : 'Co-Pilot'}
+        {isUser ? 'You' : 'Lumen Research'}
       </div>
 
       {/* Message bubble */}

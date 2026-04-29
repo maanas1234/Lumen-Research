@@ -114,7 +114,7 @@ export default function Sidebar() {
           <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-accent to-blue-accent flex items-center justify-center">
             <Sparkles size={14} className="text-white" />
           </div>
-          <span className="font-semibold text-sm text-white">Co-Pilot</span>
+          <span className="font-semibold text-sm text-white">Lumen Research</span>
         </div>
         <button onClick={() => setSidebarOpen(false)} className="btn-icon">
           <ChevronLeft size={14} />
